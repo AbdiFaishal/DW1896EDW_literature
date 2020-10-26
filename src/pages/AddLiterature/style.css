@@ -1,0 +1,115 @@
+/* Add Book page */
+
+.add-book-form {
+  margin-top: 2.5em;
+  /* width: 85%; */
+  /* padding: 1em 2.5em; */
+}
+
+.add-book-form h1 {
+  margin-bottom: 1.5em;
+}
+
+.add-book-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.add-book-form .input-text,
+.add-book-form textarea,
+.add-book-form .label-file-box,
+.add-book.form select {
+  padding: 0.5em;
+  font-family: 'Open Sans', sans-serif;
+  background-color: rgba(210, 210, 210, 0.25);
+  height: 45px;
+  border: 2px solid #bcbcbc;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.add-book-form .input-text:focus,
+.add-book-form textarea:focus,
+.add-book-form .label-file-box:focus {
+  outline: none;
+  border: 2px solid #af2e1c;
+}
+
+.add-book-form input::placeholder,
+.add-book-form textarea::placeholder {
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(235, 233, 233);
+}
+
+.add-book-form textarea {
+  height: 207px;
+}
+
+.attache-book-cover {
+  position: relative;
+}
+/* 
+.input-file-container {
+  position: relative;
+}
+.upload-box {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: white;
+  border-radius: 50px;
+  box-shadow: 5px 5px 10px rgba(210, 210, 210, 0.25);
+  width: 350px;
+  outline: none;
+}
+
+.label-file-box {
+} */
+
+.add-book-form [type='file'],
+.user-change-profile [type='file'] {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.add-book-form .label-file-box {
+  display: inline-block;
+  /* width: 218px; */
+  padding-left: 1em;
+  padding-right: 2.5em;
+  font-family: 'Open Sans', sans-serif;
+  background: url('../../images/icons/uploadIcon.png') no-repeat 98% 50%;
+  background-color: rgba(210, 210, 210, 0.25);
+  color: rgb(235, 233, 233);
+}
+
+.add-book-form .label-file-box:hover {
+  cursor: pointer;
+}
+
+.btn-add-book-form {
+  display: block;
+  /* background: url('./img/icons/addBookWhite.png') no-repeat 92%; */
+  margin-left: auto;
+  width: 150px;
+  height: 50px;
+  /* padding-right: 1.2em; */
+  border-radius: 5px;
+  background-color: #ee4622;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  color: #fff;
+}
+
+.btn-add-book-form:hover {
+  cursor: pointer;
+}

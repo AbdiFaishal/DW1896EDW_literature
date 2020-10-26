@@ -1,0 +1,204 @@
+/* Detail Book page */
+.detail-book {
+  display: flex;
+}
+
+.detail-book-main {
+  width: 100%;
+  padding: 1.5em;
+  margin-top: 2.5em;
+  font-family: 'Nunito', sans-serif;
+}
+
+.book-desc {
+  display: flex;
+  height: 500px;
+  gap: 2.5em;
+}
+
+.detail-book-main .book-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  /* justify-content: space-between; */
+}
+
+.book-cover img {
+  width: 400;
+  max-height: 545px;
+  border-radius: 10px;
+}
+
+.book-title-author h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 36px;
+}
+
+.book-title-author p {
+  font-size: 24px;
+  color: #929292;
+}
+
+.book-header {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 1.8;
+}
+
+.book-header-content {
+  color: #929292;
+  font-size: 18px;
+}
+
+.book-isbn .book-header {
+  color: #ee4622;
+}
+
+.ruler-book-detail {
+  margin-top: 2em;
+  margin-bottom: 3em;
+}
+
+.book-synopsis {
+  max-width: 1400px;
+  /* max-width: 85%; */
+  /* background-color: red; */
+}
+
+.book-desc .add-collection {
+  margin-left: auto;
+}
+
+.book-desc .btn-collection {
+  /* display: flex;
+  align-items: center; */
+  padding-right: 1.5em;
+  width: 212px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #af2e1c;
+  font-size: 18px;
+  color: #fff;
+  background-image: url('../../images/icons/bookmarkIcon2.png');
+  background-repeat: no-repeat;
+  background-position: 85% 50%;
+}
+
+.book-desc .btn-collection:disabled {
+  background-color: #ee7c62;
+  cursor: not-allowed;
+}
+
+.book-desc .btn-download {
+  /* display: flex;
+  align-items: center; */
+  padding-right: 1.5em;
+  width: 144px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #af2e1c;
+  font-size: 18px;
+  color: #fff;
+  background-image: url('../../images/icons/download-icon.png');
+  background-repeat: no-repeat;
+  background-position: 89% 50%;
+}
+
+.book-synopsis p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 150%;
+  text-align: justify;
+  color: #929292;
+  padding: 0.5em 0;
+}
+
+.btn-detail-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
+  margin-top: 2em;
+}
+.btn-detail-group .btn {
+  width: 150px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.btn-detail-group .btn:hover {
+  cursor: pointer;
+}
+
+/* .btn-detail-group .btn:disabled:hover {
+  cursor: not-allowed;
+} */
+
+.btn-bookmark {
+  background-color: #ee4622;
+  color: #ffffff;
+}
+
+.popup-success,
+.popup-addbook {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* position: relative;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  z-index: 1000;
+  background-color: #ffffff;
+  border-radius: 5px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 24px;
+  color: #469f74;
+  animation: fadeInDown;
+  animation-duration: 0.75s;
+}
+
+.popup-success {
+  width: 668px;
+  height: 84px;
+}
+.popup-addbook {
+  text-align: center;
+  width: 742px;
+  height: 142px;
+}
+.popup-addbook p {
+  width: 669px;
+}
+
+.error-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 90vh;
+  font-family: 'Nunito', sans-serif;
+}
+
+.error-message div {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  padding: 15px 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+.error-message h1 {
+  font-size: 26px;
+}
+.error-message p {
+  font-size: 20px;
+}

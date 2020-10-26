@@ -1,0 +1,90 @@
+.card-book-container {
+  position: relative;
+}
+
+.card-book {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  width: 210px;
+  height: 380px;
+  padding: 5px;
+  border-radius: 10px;
+  transition: 
+   /* scale 100ms ease-in-out, */ transform 150ms ease-in-out,
+    box-shadow 100ms ease-in-out;
+}
+.card-book:hover {
+  cursor: pointer;
+  /* transform: translateY(-5px) scale(1.05); */
+  transform: translateY(-10px);
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  box-shadow: 0 4px 4px 0 rgba(94, 94, 94, 0.2),
+    0 6px 20px 0 rgba(99, 99, 99, 0.2);
+}
+.card-book img {
+  width: 200px;
+  max-height: 270px;
+}
+.card-book .title {
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 0.5em;
+}
+
+.author-year-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-book .author,
+.card-book .year {
+  font-size: 18px;
+  font-family: 'Nunito', sans-serif;
+  color: #929292;
+  padding-top: 0.5em;
+}
+
+.card-book .author-year-group {
+  margin-top: auto;
+}
+
+.book-waiting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  background: rgba(196, 196, 196, 0.5);
+  background: rgba(121, 121, 121, 0.45);
+  width: 210px;
+  height: 380px;
+  padding: 5px;
+  border-radius: 10px;
+}
+.book-waiting p {
+  display: block;
+  padding: 3px;
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+  color: rgb(0, 0, 0);
+  background-color: #ffd600;
+  font-family: 'Open Sans', sans-serif;
+}
+.delete-collection {
+  position: absolute;
+  top: -15px;
+  right: -20px;
+}
+.delete-collection .btn {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+}
+
+.delete-collection img {
+  width: 55px;
+  height: 55px;
+}

@@ -3,11 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { UserContextProvider } from './context/userContext';
+import { LiteratureContextProvider } from './context/literatureContext';
+import { CollectionContextProvider } from './context/collectionContext';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <UserContextProvider>
+    <LiteratureContextProvider>
+      <CollectionContextProvider>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </CollectionContextProvider>
+    </LiteratureContextProvider>
+  </UserContextProvider>,
   document.getElementById('root')
 );
 
