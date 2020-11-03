@@ -23,8 +23,9 @@
     0 6px 20px 0 rgba(99, 99, 99, 0.2);
 }
 .card-book img {
-  width: 200px;
-  max-height: 270px;
+  max-width: 200px;
+  height: 270px;
+  border-radius: 5px;
 }
 .card-book .title {
   font-size: 24px;

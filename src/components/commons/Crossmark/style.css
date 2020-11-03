@@ -24,11 +24,11 @@ svg {
   animation: dash-check 0.9s 0.35s ease-in-out forwards;
 }
 
-p.success {
+p.error {
   text-align: center;
   margin: 20px 0 60px;
   font-size: 1.25em;
-  color: #73af55;
+  color: #d06079;
 }
 
 @-webkit-keyframes dash {

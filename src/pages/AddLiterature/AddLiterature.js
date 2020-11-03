@@ -29,7 +29,7 @@ const AddLiterature = () => {
     image,
   } = bookData;
 
-  console.log('state data: ', bookData);
+  // console.log('state data: ', bookData);
   const handleChange = (e) => {
     setBookData({
       ...bookData,
@@ -46,6 +46,7 @@ const AddLiterature = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // console.log('bookData: ', bookData);
     try {
       const formData = new FormData();
 
@@ -77,12 +78,11 @@ const AddLiterature = () => {
         attache: null,
         image: null,
       });
-      console.log('res: ', res);
+      // console.log('res: ', res);
     } catch (err) {
+      console.log(err.response);
       setLoading(false);
       setTextError(err.response.data.error.message);
-
-      console.log(err.response);
     }
   };
 
@@ -107,7 +107,7 @@ const AddLiterature = () => {
               name="publication_date"
               className="input-text"
               type="text"
-              placeholder="Publication Date"
+              placeholder="Publication Date (e.g. 1 January 2020)"
             />
             <input
               value={pages}

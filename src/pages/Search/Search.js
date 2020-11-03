@@ -73,7 +73,7 @@ const Search = () => {
         year: '',
       });
     } catch (err) {
-      console.log(err.response);
+      // console.log(err.response);
       dispatch({
         type: 'FETCH_LITERATURES_FAILED',
         payload: err.response.data.error.message,

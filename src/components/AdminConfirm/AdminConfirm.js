@@ -2,6 +2,7 @@ import React from 'react';
 import ConfirmModal from './../commons/ConfirmModal/ConfirmModal';
 import LoadingSpinner from './../commons/LoadingSpinner/LoadingSpinner';
 import Checkmark from './../commons/Checkmark/Checkmark';
+import Crossmark from './../commons/Crossmark/Crossmark';
 
 const AdminConfirm = ({
   setModalOpen,
@@ -23,7 +24,8 @@ const AdminConfirm = ({
         </ConfirmModal>
       ) : message ? (
         <ConfirmModal>
-          <Checkmark message="Done!" />
+          <Checkmark message={message} />
+          {/* <Crossmark message={message} /> */}
         </ConfirmModal>
       ) : (
         <ConfirmModal>

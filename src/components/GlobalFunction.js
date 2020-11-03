@@ -1,4 +1,4 @@
-export const convertString = (string, limit = 25) => {
+export const convertString = (string, limit = 15) => {
   const newString = [];
   if (string.length > limit) {
     string.split(' ').reduce((acc, cur) => {
@@ -30,4 +30,12 @@ export const convertTitle = (title, limit = 25) => {
   } else {
     return title;
   }
+};
+
+export const linkFormat = (input) => {
+  if (input) {
+    const index = input.lastIndexOf('/');
+    return input.slice(index + 1);
+  }
+  return 'File Null';
 };

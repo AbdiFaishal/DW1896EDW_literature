@@ -18,7 +18,11 @@ const UploadAvatar = ({
         </ConfirmModal>
       ) : message ? (
         <ConfirmModal>
-          <Checkmark />
+          {message === 'Upload Success' ? (
+            <Checkmark />
+          ) : (
+            <h1>Upload Failed</h1>
+          )}
         </ConfirmModal>
       ) : (
         <ConfirmModal>

@@ -24,9 +24,11 @@ const Profile = () => {
 
   const handleCloseModal = () => {
     setModalOpen(false);
+    setUserData({ avatar: null });
   };
 
   const handleChange = (e) => {
+    console.log('handle change');
     setUserData({ avatar: e.target.files[0] });
     setMessage('');
     setTimeout(() => {
@@ -63,6 +65,8 @@ const Profile = () => {
     } catch (err) {
       console.log(err.response);
       setUserData({ avatar: null });
+      setMessage('Upload Failed');
+      setUploadLoading(false);
     }
   };
 
@@ -71,7 +75,7 @@ const Profile = () => {
       try {
         setBookLoading(true);
         const res = await API.get('/my-literatures');
-        console.log('res: ', res);
+        // console.log('res: ', res);
         setBookLoading(false);
         setUserLiteratures(res.data.data);
       } catch (err) {

@@ -1,11 +1,6 @@
 import React, { useEffect, useContext } from 'react';
 // import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { API, setAuthToken } from './config/api';
 import Landing from './pages/Landing/Landing';

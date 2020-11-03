@@ -5,7 +5,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import { API } from './../../config/api';
 import LoadingSpinner from './../../components/commons/LoadingSpinner/LoadingSpinner';
 import LiteratureDesc from './../../components/LiteratureDesc/LiteratureDesc';
-import PopupSuccess from './../../components/commons/PopupSuccess/PopupSuccess';
+// import PopupSuccess from './../../components/commons/PopupSuccess/PopupSuccess';
 
 import { UserContext } from './../../context/userContext';
 import { CollectionContext } from './../../context/collectionContext';

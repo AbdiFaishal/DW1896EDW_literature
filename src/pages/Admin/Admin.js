@@ -19,6 +19,7 @@ const Admin = () => {
   const [bookId, setBookId] = useState(null);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
+  const [loadingLiteratures, setLoadingLiteratures] = useState(false);
 
   const nameFormat = (str) => {
     return str.slice(str.indexOf('-') + 1);
@@ -71,22 +72,25 @@ const Admin = () => {
         status,
       });
       getBooks();
-      // console.log('res: ', res);
+      console.log('res: ', res);
       setMessage(res.data.message);
       setLoading(false);
     } catch (err) {
       setLoading(false);
-      console.log(err.response);
+      // console.log(err.response);
     }
   };
 
   const getBooks = async () => {
     try {
+      setLoadingLiteratures(true);
       const res = await API.get('/literatures');
-      console.log('res: ', res);
+      // console.log('res: ', res);
       setBooks(res.data.data);
+      setLoadingLiteratures(false);
     } catch (err) {
       console.log(err.response);
+      setLoadingLiteratures(false);
     }
   };
 
@@ -107,6 +111,7 @@ const Admin = () => {
         nameFormat={nameFormat}
         addCustomClass={addCustomClass}
         addCustomIcon={addCustomIcon}
+        loadingLiteratures={loadingLiteratures}
       />
       {modalOpen && (
         <AdminConfirm

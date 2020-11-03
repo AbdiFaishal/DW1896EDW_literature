@@ -1,9 +1,10 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import bigCover from '../../images/utils/bigCoverLiterature.png';
-import axios from 'axios';
+// import axios from 'axios';
 import { API } from './../../config/api';
+// import { CollectionContext } from './../../context/collectionContext';
+
 import PopupSuccess from './../commons/PopupSuccess/PopupSuccess';
-import { CollectionContext } from './../../context/collectionContext';
 import LoadingProcess from '../commons/LoadingProcess/LoadingProcess';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
@@ -17,7 +18,7 @@ const LiteratureDesc = ({
   // isBookmark,
   // addCollection,
 }) => {
-  const { state } = useContext(CollectionContext);
+  // const { state } = useContext(CollectionContext);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [popupOpen, setPopupOpen] = useState(false);
@@ -51,27 +52,27 @@ const LiteratureDesc = ({
     }
   };
 
-  const handleDownload = async (url) => {
-    try {
-      const res = await axios.get(url, {
-        responseType: 'blob',
-      });
-      const newUrl = window.URL.createObjectURL(new Blob([res.data]));
-      const link = document.createElement('a');
-      link.href = newUrl;
-      link.setAttribute('download', 'file.pdf');
-      document.body.appendChild(link);
-      link.click();
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  // const handleDownload = async (url) => {
+  //   try {
+  //     const res = await axios.get(url, {
+  //       responseType: 'blob',
+  //     });
+  //     const newUrl = window.URL.createObjectURL(new Blob([res.data]));
+  //     const link = document.createElement('a');
+  //     link.href = newUrl;
+  //     link.setAttribute('download', 'file.pdf');
+  //     document.body.appendChild(link);
+  //     link.click();
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
   return (
     <div className="detail-book-main">
       <div className="book-desc">
         <div className="book-cover">
-          <Zoom overlayBgColorEnd="rgba(255, 255, 255, 0.15)">
+          <Zoom overlayBgColorEnd="rgba(0, 0, 0, 0.35)">
             <img
               height="545"
               width="auto"
@@ -100,9 +101,9 @@ const LiteratureDesc = ({
           <div className="book-button">
             <button
               className="btn btn-download"
-              onClick={() => handleDownload(bookDetail.attache)}
+              // onClick={() => handleDownload(bookDetail.attache)}
             >
-              Download
+              <a href={bookDetail.attache}>Download</a>
             </button>
           </div>
         </div>

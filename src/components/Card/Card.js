@@ -17,14 +17,14 @@ const Card = (props) => {
     history.push(`/detail/${id}`);
   };
 
-  console.log('props: ', props);
+  // console.log('props: ', props);
   return (
     <div className="card-book-container">
       <div className="card-book" onClick={() => moveToDetail(props.id)}>
-        <img src={image} alt="" />
+        <img src={props.image || image} alt="" />
         <p className="title">{props.title && convertTitle(props.title)}</p>
         <div className="author-year-group">
-          <p className="author">{convertString(props.author, 16)}</p>
+          <p className="author">{convertString(props.author, 15)}</p>
           <p className="year">
             {props.publication_date && convertDate(props.publication_date)}
           </p>

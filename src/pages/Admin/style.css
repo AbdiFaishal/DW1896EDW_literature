@@ -114,6 +114,14 @@
   font-weight: 500;
   text-transform: capitalize;
 }
+.admin-table td.empty-book {
+  color: #353535;
+  font-size: 22px;
+  text-align: center;
+  font-weight: 500;
+  padding: 0.5em 1em;
+}
+
 .admin-table thead tr {
   background-color: #fff;
 }
@@ -121,7 +129,7 @@
   background-color: #fff;
 }
 
-.admin-table tr:hover {
+.admin-table tbody tr:hover {
   background-color: #ddd;
 }
 

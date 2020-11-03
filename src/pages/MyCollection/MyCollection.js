@@ -21,7 +21,7 @@ const MyCollection = () => {
       setLoading(true);
       setMessage('');
       const res = await API.delete(`delete-collection/${literatureId}`);
-      console.log('res: ', res);
+      // console.log('res: ', res);
       setMessage(res.data.message);
       setLoading(false);
 
@@ -40,11 +40,11 @@ const MyCollection = () => {
         type: 'GET_COLLECTIONS',
         payload: res.data.data,
       });
-      console.log('res: ', res);
+      // console.log('res: ', res);
       setLoading(false);
     } catch (err) {
-      setLoading(false);
       console.log(err.response);
+      setLoading(false);
       dispatch({
         type: 'EMPTY_COLLECTIONS',
       });

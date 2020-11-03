@@ -60,11 +60,11 @@ const LoginModal = ({ setLoginOpen, setRegisterOpen }) => {
         if (res.data.data.user.role === 'admin') {
           setTimeout(() => {
             history.push('/admin');
-          }, 150);
+          }, 750);
         } else {
           setTimeout(() => {
             history.push('/home');
-          }, 150);
+          }, 750);
         }
       } catch (err) {
         dispatch({
