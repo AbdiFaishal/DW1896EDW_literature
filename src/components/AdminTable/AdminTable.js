@@ -32,7 +32,7 @@ const AdminTable = ({
         <thead>
           <tr>
             <th>No</th>
-            <th>Users or Author</th>
+            <th>User or Author</th>
             <th>ISBN</th>
             <th>Literature</th>
             <th>Status</th>
@@ -60,14 +60,19 @@ const AdminTable = ({
                   <td>{book.user.fullName}</td>
                   <td>{book.isbn}</td>
                   <td>
-                    {/* <Link to={book.attache}>{nameFormat(book.attache)}</Link> */}
                     {/* <p
                     className="download-link"
                     onClick={() => handleDownload(book.attache)}
                   >
                     {linkFormat(book.attache)}
                   </p> */}
-                    <a href={book.attache}>{linkFormat(book.attache)}</a>
+                    <a
+                      href={book.attache}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {linkFormat(book.attache)}
+                    </a>
                   </td>
                   <td className={books.length && addCustomClass(book.status)}>
                     {book.status}

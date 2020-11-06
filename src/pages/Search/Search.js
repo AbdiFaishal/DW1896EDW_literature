@@ -8,6 +8,7 @@ import LoadingSpinner from '../../components/commons/LoadingSpinner/LoadingSpinn
 
 import arrowDown from '../../images/icons/arrow-down.png';
 import WrapperMessage from './../../components/commons/WrapperMessage/WrapperMessage';
+import { useEffect } from 'react';
 
 const years = [
   { value: 2020 },
@@ -45,11 +46,23 @@ const Search = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const handleClearInput = () => {
+    setForm({
+      ...form,
+      title: '',
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       let params = {};
-      if (title) {
+      if (title && year) {
+        params = {
+          title,
+          year,
+        };
+      } else if (title) {
         params = {
           title,
         };
@@ -93,6 +106,7 @@ const Search = () => {
           title={title}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
+          handleClearInput={handleClearInput}
         />
         <div className="flex-20-80">
           <div className="flex-20 dropdown-year">

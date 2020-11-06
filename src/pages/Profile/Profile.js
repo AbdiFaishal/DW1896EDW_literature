@@ -14,7 +14,7 @@ const Profile = () => {
   const { state, dispatch } = useContext(UserContext);
   const [userLiteratures, setUserLiteratures] = useState([]);
   const [bookLoading, setBookLoading] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
+  // const [modalOpen, setModalOpen] = useState(false);
   const [message, setMessage] = useState('');
   const [uploadLoading, setUploadLoading] = useState(false);
 
@@ -23,17 +23,16 @@ const Profile = () => {
   });
 
   const handleCloseModal = () => {
-    setModalOpen(false);
+    // setModalOpen(false);
     setUserData({ avatar: null });
+    setMessage('');
   };
 
   const handleChange = (e) => {
-    console.log('handle change');
+    // console.log('handle change');
     setUserData({ avatar: e.target.files[0] });
-    setMessage('');
-    setTimeout(() => {
-      setModalOpen(true);
-    }, 250);
+    // setMessage('');
+    // setModalOpen(true);
   };
 
   const handleSubmit = async (e) => {
@@ -53,19 +52,20 @@ const Profile = () => {
         config
       );
 
-      setUploadLoading(false);
-      setMessage('Upload Success');
-      setUserData({ avatar: null });
-
       const auth = await API.get('/auth');
+
       dispatch({
         type: 'USER_LOADED',
         payload: auth.data.data.user,
       });
+
+      setUploadLoading(false);
+      setMessage('Upload Success');
+      setUserData({ avatar: null });
     } catch (err) {
       console.log(err.response);
-      setUserData({ avatar: null });
       setMessage('Upload Failed');
+      setUserData({ avatar: null });
       setUploadLoading(false);
     }
   };
@@ -85,6 +85,9 @@ const Profile = () => {
     };
     getBooks();
   }, []);
+
+  console.log('avatar: ', userData.avatar);
+  console.log('message: ', message);
   return (
     <div className="container">
       <Navbar />
@@ -150,14 +153,15 @@ const Profile = () => {
           </div>
         </div>
       </div>
-      {modalOpen && (
+      {/* modalOpen */}
+      {userData.avatar || message ? (
         <UploadAvatar
           handleCloseModal={handleCloseModal}
           handleSubmit={handleSubmit}
           message={message}
           uploadLoading={uploadLoading}
         />
-      )}
+      ) : null}
     </div>
   );
 };

@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 const Logo = () => {
   const history = useHistory();
   const moveToHome = () => {
-    history.push('/home');
+    history.push('/search');
   };
   return (
     <div className="logo" onClick={moveToHome}>

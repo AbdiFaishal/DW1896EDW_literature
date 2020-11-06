@@ -76,8 +76,9 @@ const Admin = () => {
       setMessage(res.data.message);
       setLoading(false);
     } catch (err) {
+      console.log(err.response);
       setLoading(false);
-      // console.log(err.response);
+      setMessage(err.response.data.error.message);
     }
   };
 

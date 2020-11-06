@@ -52,7 +52,7 @@ const Detail = () => {
         });
         setLoading(false);
       } catch (err) {
-        console.log(err);
+        console.log(err.response);
         setLoading(false);
       }
     };

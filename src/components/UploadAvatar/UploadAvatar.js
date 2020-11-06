@@ -2,6 +2,7 @@ import React from 'react';
 import Checkmark from '../commons/Checkmark/Checkmark';
 import ConfirmModal from './../commons/ConfirmModal/ConfirmModal';
 import LoadingSpinner from './../commons/LoadingSpinner/LoadingSpinner';
+import Crossmark from './../commons/Crossmark/Crossmark';
 
 const UploadAvatar = ({
   handleCloseModal,
@@ -18,11 +19,7 @@ const UploadAvatar = ({
         </ConfirmModal>
       ) : message ? (
         <ConfirmModal>
-          {message === 'Upload Success' ? (
-            <Checkmark />
-          ) : (
-            <h1>Upload Failed</h1>
-          )}
+          {message === 'Upload Success' ? <Checkmark /> : <Crossmark />}
         </ConfirmModal>
       ) : (
         <ConfirmModal>

@@ -24,8 +24,10 @@
 }
 
 .book-cover img {
-  width: 400;
-  max-height: 545px;
+  /* width: 400px; */
+  /* max-height: 545px; */
+  /* width: 400px;
+  height: 545px; */
   border-radius: 10px;
 }
 
@@ -90,8 +92,9 @@
 }
 
 .book-desc .btn-download {
-  /* display: flex;
-  align-items: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding-right: 1.5em;
   width: 144px;
   height: 50px;

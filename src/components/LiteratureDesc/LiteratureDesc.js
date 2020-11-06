@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import bigCover from '../../images/utils/bigCoverLiterature.png';
-// import axios from 'axios';
 import { API } from './../../config/api';
+// import axios from 'axios';
 // import { CollectionContext } from './../../context/collectionContext';
 
 import PopupSuccess from './../commons/PopupSuccess/PopupSuccess';
@@ -9,7 +9,6 @@ import LoadingProcess from '../commons/LoadingProcess/LoadingProcess';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
 
-// import { convertString } from '../GlobalFunction';
 const LiteratureDesc = ({
   bookDetail,
   collectionState,
@@ -60,7 +59,8 @@ const LiteratureDesc = ({
   //     const newUrl = window.URL.createObjectURL(new Blob([res.data]));
   //     const link = document.createElement('a');
   //     link.href = newUrl;
-  //     link.setAttribute('download', 'file.pdf');
+  //     // link.setAttribute('download', 'file.pdf');
+  //     link.setAttribute('download', linkFormat(url));
   //     document.body.appendChild(link);
   //     link.click();
   //   } catch (err) {
@@ -72,10 +72,12 @@ const LiteratureDesc = ({
     <div className="detail-book-main">
       <div className="book-desc">
         <div className="book-cover">
-          <Zoom overlayBgColorEnd="rgba(0, 0, 0, 0.35)">
+          <Zoom overlayBgColorEnd="rgba(0, 0, 0, 0.7)">
             <img
-              height="545"
               width="auto"
+              height="545"
+              // width="auto"
+              // height="auto"
               src={bookDetail.image || bigCover}
               alt=""
             />
@@ -99,12 +101,25 @@ const LiteratureDesc = ({
             <p className="book-header-content">{bookDetail.isbn}</p>
           </div>
           <div className="book-button">
-            <button
+            {/* <button className="btn btn-download">
+              {bookDetail.attache && (
+                <a
+                  href={bookDetail.attache}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Download
+                </a>
+              )}
+            </button> */}
+            <a
               className="btn btn-download"
-              // onClick={() => handleDownload(bookDetail.attache)}
+              href={bookDetail.attache}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <a href={bookDetail.attache}>Download</a>
-            </button>
+              Download
+            </a>
           </div>
         </div>
         <div className="add-collection">

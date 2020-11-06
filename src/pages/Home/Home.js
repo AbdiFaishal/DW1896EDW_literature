@@ -52,6 +52,7 @@ const Home = () => {
           type: 'FETCH_LITERATURES_FAILED',
           payload: err.response.data.error.message,
         });
+        history.push('/search');
       }
     }
   };

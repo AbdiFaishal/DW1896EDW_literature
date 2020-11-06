@@ -1,6 +1,14 @@
 .card-book-container {
   position: relative;
+  /* transition: transform 150ms ease-in-out, box-shadow 100ms ease-in-out; */
 }
+
+/* .card-book-container:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 4px 0 rgba(94, 94, 94, 0.2),
+    0 6px 20px 0 rgba(99, 99, 99, 0.2);
+} */
 
 .card-book {
   display: flex;
@@ -10,18 +18,18 @@
   height: 380px;
   padding: 5px;
   border-radius: 10px;
-  transition: 
-   /* scale 100ms ease-in-out, */ transform 150ms ease-in-out,
-    box-shadow 100ms ease-in-out;
+  /* transition: transform 150ms ease-in-out, box-shadow 100ms ease-in-out; */
+  transition: box-shadow 100ms ease-in-out;
 }
+
 .card-book:hover {
   cursor: pointer;
-  /* transform: translateY(-5px) scale(1.05); */
-  transform: translateY(-10px);
+  /* transform: translateY(-10px); */
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
   box-shadow: 0 4px 4px 0 rgba(94, 94, 94, 0.2),
     0 6px 20px 0 rgba(99, 99, 99, 0.2);
 }
+
 .card-book img {
   max-width: 200px;
   height: 270px;
@@ -74,11 +82,16 @@
   background-color: #ffd600;
   font-family: 'Open Sans', sans-serif;
 }
+
 .delete-collection {
   position: absolute;
   top: -15px;
   right: -20px;
+  transition: 
+   /* scale 100ms ease-in-out, */ transform 150ms ease-in-out,
+    box-shadow 100ms ease-in-out;
 }
+
 .delete-collection .btn {
   width: 55px;
   height: 55px;

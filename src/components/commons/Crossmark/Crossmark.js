@@ -10,7 +10,7 @@ const Crossmark = ({ message }) => {
         viewBox="0 0 130.2 130.2"
       >
         <circle
-          class="path circle"
+          className="path circle"
           fill="none"
           stroke="#D06079"
           stroke-width="6"
@@ -20,7 +20,7 @@ const Crossmark = ({ message }) => {
           r="62.1"
         />
         <line
-          class="path line"
+          className="path line"
           fill="none"
           stroke="#D06079"
           stroke-width="6"
@@ -32,7 +32,7 @@ const Crossmark = ({ message }) => {
           y2="92.3"
         />
         <line
-          class="path line"
+          className="path line"
           fill="none"
           stroke="#D06079"
           stroke-width="6"
@@ -44,7 +44,7 @@ const Crossmark = ({ message }) => {
           y2="92.2"
         />
       </svg>
-      <p class="error">{message ? message : 'Upload Failed'}</p>
+      <p className="error">{message ? message : 'Upload Failed'}</p>
     </div>
   );
 };

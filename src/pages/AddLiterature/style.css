@@ -89,7 +89,7 @@
   font-family: 'Open Sans', sans-serif;
   background: url('../../images/icons/uploadIcon.png') no-repeat 98% 50%;
   background-color: rgba(210, 210, 210, 0.25);
-  color: rgb(235, 233, 233);
+  color: rgb(255, 255, 255);
 }
 
 .add-book-form .label-file-box:hover {

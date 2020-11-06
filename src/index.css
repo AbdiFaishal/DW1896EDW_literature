@@ -110,14 +110,15 @@ a {
   width: 100%;
   height: 100vh;
   /* background-color: rgba(139, 139, 139, 0.25); */
-  background-color: rgba(0, 0, 0, 0.35);
   /* background-color: rgba(255, 255, 255, 0.15); */
-
+  /* background-color: rgba(0, 0, 0, 0.35); */
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 1000;
 }
 
 .modal-background-admin {
-  background-color: rgba(51, 51, 51, 0.65);
+  /* background-color: rgba(51, 51, 51, 0.65); */
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .login-modal,
@@ -423,6 +424,7 @@ a {
   text-align: center;
   padding: 35px 33px;
   background-color: #ffffff;
+  background-color: #f9f9f9;
   color: #161616;
   /* border: 1px solid #af2e1c; */
   border-radius: 10px;
@@ -431,7 +433,8 @@ a {
   height: 240px;
   font-family: 'Nunito', sans-serif;
   animation: fadeInDown;
-  animation-duration: 0.75s;
+  /* animation-duration: 0.75s; */
+  animation-duration: 0.65s;
 }
 
 .confirm-modal p {
@@ -453,22 +456,30 @@ a {
 .btn-group-confirm .btn {
   font-size: 20px;
   flex: 1 1 auto;
-  padding: 0.5em 2.5em;
+  padding: 0.6em 2.5em;
+}
+
+.btn-group-confirm .btn {
+  border-radius: 5px;
+  transition: background-color 0.25s;
 }
 
 .btn-group-confirm .btn:first-child {
-  background-color: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
+  background-color: #c6d1db;
+  color: #262c35;
+  /* border: 2px solid #c6d1db; */
 }
+
 .btn-group-confirm .btn:last-child {
-  background-color: #d4edda;
-  color: #155724;
+  background-color: #f44235;
+  color: #fff;
+  /* border: 2px solid #af2e1c; */
 }
 
 .btn-group-confirm .btn:hover {
   cursor: pointer;
 }
+
 /* .user-change-profile button, */
 .user-change-profile .btn {
   display: block;

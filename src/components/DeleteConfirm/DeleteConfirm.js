@@ -27,7 +27,7 @@ const DeleteConfirm = ({
         </ConfirmModal>
       ) : (
         <ConfirmModal>
-          <h1>Book Verification</h1>
+          <h1>Delete Confirmation</h1>
           <p>
             Are you sure want to <strong>remove</strong> this collection?
           </p>

@@ -3,10 +3,10 @@ import image from '../../images/utils/book-card.png';
 import { useHistory } from 'react-router-dom';
 import deleteIcon from '../../images/icons/delete3.png';
 
-import { convertString } from '../GlobalFunction';
+import { convertString, convertTitle } from '../GlobalFunction';
 
 const CardCollection = (props) => {
-  console.log('props: ', props);
+  // console.log('props: ', props);
   const history = useHistory();
   const convertDate = (date) => {
     let split = date.split(' ');
@@ -30,7 +30,7 @@ const CardCollection = (props) => {
         onClick={() => moveToDetail(props.literature.id)}
       >
         <img src={image} alt="" />
-        <p className="title">{convertString(props.literature.title, 25)}</p>
+        <p className="title">{convertTitle(props.literature.title, 25)}</p>
         <div className="author-year-group">
           <p className="author">{convertString(props.literature.author, 16)}</p>
           <p className="year">
