@@ -64,7 +64,7 @@ const AddLiterature = () => {
         },
       };
       setLoading(true);
-      const res = await API.post(`/literature`, formData, config);
+      await API.post(`/literature`, formData, config);
       setLoading(false);
       setTextError(null);
       setPopupOpen(true);

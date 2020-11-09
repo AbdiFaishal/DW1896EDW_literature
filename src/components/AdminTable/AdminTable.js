@@ -2,13 +2,15 @@ import React from 'react';
 // import axios from 'axios';
 // import { Link } from 'react-router-dom';
 import { linkFormat } from './../GlobalFunction';
-import LoadingSpinner from './../commons/LoadingSpinner/LoadingSpinner';
+import LoadingBall from './../commons/LoadingBall/LoadingBall';
 
 const AdminTable = ({
   books,
   addCustomClass,
   addCustomIcon,
   loadingLiteratures,
+  setStatusFilter,
+  statusFilter,
 }) => {
   // const handleDownload = async (url) => {
   //   try {
@@ -25,9 +27,29 @@ const AdminTable = ({
   //     console.log(err);
   //   }
   // };
+
   return (
     <div className="container book-verification">
-      <h1>Literature verification</h1>
+      <div className="admin-header">
+        <h1>Literature verification</h1>
+        <form>
+          <select
+            value={statusFilter}
+            onChange={(e) => setStatusFilter(e.target.value)}
+          >
+            {/* <option value="" disabled>
+              Filter By Status
+            </option> */}
+            <option className="option-hidden" value="" hidden>
+              Filter By Status
+            </option>
+            <option value="all">All</option>
+            <option value="approved">Approved</option>
+            <option value="waiting">Waiting</option>
+            <option value="canceled">Canceled</option>
+          </select>
+        </form>
+      </div>
       <table className="admin-table">
         <thead>
           <tr>
@@ -43,13 +65,13 @@ const AdminTable = ({
           {loadingLiteratures ? (
             <tr>
               <td className="empty-book" colSpan="6">
-                <LoadingSpinner />
+                <LoadingBall />
               </td>
             </tr>
           ) : !books.length ? (
             <tr>
               <td className="empty-book" colSpan="6">
-                Books is empty
+                <h4>Your literature list is empty.</h4>
               </td>
             </tr>
           ) : (

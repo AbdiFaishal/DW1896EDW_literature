@@ -12,18 +12,19 @@ const MyCollection = () => {
   const { state: userState } = useContext(UserContext);
   const { state, dispatch } = useContext(CollectionContext);
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState(false);
+  const [message, setMessage] = useState('');
   const [confirmModal, setConfirmModal] = useState(false);
   const [collectionId, setCollectionId] = useState(null);
+  const [loadingDelete, setLoadingDelete] = useState(false);
 
   const deleteCollection = async (literatureId) => {
     try {
-      setLoading(true);
+      setLoadingDelete(true);
       setMessage('');
       const res = await API.delete(`delete-collection/${literatureId}`);
       // console.log('res: ', res);
+      setLoadingDelete(false);
       setMessage(res.data.message);
-      setLoading(false);
 
       getCollections();
     } catch (err) {
@@ -80,8 +81,9 @@ const MyCollection = () => {
               collectionId={collectionId}
               message={message}
               setMessage={setMessage}
-              loading={loading}
+              // loading={loading}
               deleteCollection={deleteCollection}
+              loadingDelete={loadingDelete}
             />
           )}
         </div>

@@ -2,7 +2,8 @@ import axios from 'axios';
 
 // Set config defaults when creating the instance of axios
 export const API = axios.create({
-  baseURL: 'http://localhost:5000/api/v1',
+  // baseURL: 'http://localhost:5000/api/v1',
+  baseURL: 'https://dw1896edw-literature-api.herokuapp.com/api/v1',
 });
 
 // Alter defaults after instance has been created || Integrate default header for auth

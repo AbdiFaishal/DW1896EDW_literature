@@ -17,13 +17,10 @@ const LiteratureDesc = ({
   // isBookmark,
   // addCollection,
 }) => {
-  // const { state } = useContext(CollectionContext);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [popupOpen, setPopupOpen] = useState(false);
   const [isBookmark, setIsBookmark] = useState(false);
-
-  // console.log('collection state: ', state);
 
   const checkBookmark = (target, id) => {
     return (
@@ -38,7 +35,7 @@ const LiteratureDesc = ({
       const res = await API.post('/collection', {
         literatureId: params.id,
       });
-      console.log('res: ', res);
+      // console.log('res: ', res);
       setMessage(res.data.message);
       setLoading(false);
       setPopupOpen(true);
@@ -51,23 +48,6 @@ const LiteratureDesc = ({
     }
   };
 
-  // const handleDownload = async (url) => {
-  //   try {
-  //     const res = await axios.get(url, {
-  //       responseType: 'blob',
-  //     });
-  //     const newUrl = window.URL.createObjectURL(new Blob([res.data]));
-  //     const link = document.createElement('a');
-  //     link.href = newUrl;
-  //     // link.setAttribute('download', 'file.pdf');
-  //     link.setAttribute('download', linkFormat(url));
-  //     document.body.appendChild(link);
-  //     link.click();
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
-
   return (
     <div className="detail-book-main">
       <div className="book-desc">
@@ -76,8 +56,6 @@ const LiteratureDesc = ({
             <img
               width="auto"
               height="545"
-              // width="auto"
-              // height="auto"
               src={bookDetail.image || bigCover}
               alt=""
             />
@@ -101,17 +79,6 @@ const LiteratureDesc = ({
             <p className="book-header-content">{bookDetail.isbn}</p>
           </div>
           <div className="book-button">
-            {/* <button className="btn btn-download">
-              {bookDetail.attache && (
-                <a
-                  href={bookDetail.attache}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Download
-                </a>
-              )}
-            </button> */}
             <a
               className="btn btn-download"
               href={bookDetail.attache}
@@ -127,7 +94,9 @@ const LiteratureDesc = ({
             checkBookmark(collectionState.collections, params.id) ? null : (
             <button
               onClick={addCollection}
-              className="btn btn-collection"
+              className={
+                loading ? 'btn btn-collection-loading' : 'btn btn-collection'
+              }
               disabled={loading}
             >
               {loading ? <LoadingProcess /> : 'Add Collection'}

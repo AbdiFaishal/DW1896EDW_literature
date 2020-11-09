@@ -78,6 +78,22 @@
   color: #161616;
 }
 
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-header select {
+  border: 1px solid #161616;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  outline: none;
+}
+
 .book-verification h1 {
   font-weight: 600;
   font-family: 'Open Sans', sans-serif;
@@ -115,11 +131,17 @@
   text-transform: capitalize;
 }
 .admin-table td.empty-book {
-  color: #353535;
-  font-size: 22px;
   text-align: center;
   font-weight: 500;
   padding: 0.5em 1em;
+}
+
+.admin-table td.empty-book h4 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  color: #161616;
+  color: #585858;
+  padding: 15px;
 }
 
 .admin-table thead tr {

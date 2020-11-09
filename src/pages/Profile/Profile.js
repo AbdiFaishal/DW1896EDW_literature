@@ -46,11 +46,7 @@ const Profile = () => {
         },
       };
       setUploadLoading(true);
-      const res = await API.patch(
-        `/profile/${state.user.id}`,
-        formData,
-        config
-      );
+      await API.patch(`/profile/${state.user.id}`, formData, config);
 
       const auth = await API.get('/auth');
 
@@ -86,8 +82,6 @@ const Profile = () => {
     getBooks();
   }, []);
 
-  console.log('avatar: ', userData.avatar);
-  console.log('message: ', message);
   return (
     <div className="container">
       <Navbar />

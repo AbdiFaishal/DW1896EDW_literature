@@ -29,7 +29,7 @@ const Checkmark = ({ message }) => {
           points="100.2,40.2 51.5,88.8 29.8,67.5 "
         />
       </svg>
-      <p className="success">{message ? message : 'Upload Success!'}</p>
+      <p className="success">{message ? message : 'Upload success!'}</p>
     </div>
   );
 };

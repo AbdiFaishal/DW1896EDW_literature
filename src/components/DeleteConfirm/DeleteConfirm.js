@@ -1,7 +1,7 @@
 import React from 'react';
 import ConfirmModal from '../commons/ConfirmModal/ConfirmModal';
-import LoadingSpinner from '../commons/LoadingSpinner/LoadingSpinner';
 import Checkmark from '../commons/Checkmark/Checkmark';
+import LoadingBall from './../commons/LoadingBall/LoadingBall';
 
 const DeleteConfirm = ({
   handleSubmit,
@@ -10,6 +10,7 @@ const DeleteConfirm = ({
   setConfirmModal,
   collectionId,
   deleteCollection,
+  loadingDelete,
 }) => {
   return (
     <div className="modal-parent">
@@ -17,9 +18,9 @@ const DeleteConfirm = ({
         className="modal-background "
         onClick={() => setConfirmModal(false)}
       />
-      {loading ? (
+      {loadingDelete ? (
         <ConfirmModal>
-          <LoadingSpinner />
+          <LoadingBall />
         </ConfirmModal>
       ) : message ? (
         <ConfirmModal>

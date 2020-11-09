@@ -8,7 +8,6 @@ import LoadingSpinner from '../../components/commons/LoadingSpinner/LoadingSpinn
 
 import arrowDown from '../../images/icons/arrow-down.png';
 import WrapperMessage from './../../components/commons/WrapperMessage/WrapperMessage';
-import { useEffect } from 'react';
 
 const years = [
   { value: 2020 },

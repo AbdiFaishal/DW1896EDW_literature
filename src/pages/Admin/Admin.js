@@ -20,6 +20,7 @@ const Admin = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [loadingLiteratures, setLoadingLiteratures] = useState(false);
+  const [statusFilter, setStatusFilter] = useState('');
 
   const nameFormat = (str) => {
     return str.slice(str.indexOf('-') + 1);
@@ -75,10 +76,12 @@ const Admin = () => {
       console.log('res: ', res);
       setMessage(res.data.message);
       setLoading(false);
+      setStatusFilter('');
     } catch (err) {
       console.log(err.response);
       setLoading(false);
       setMessage(err.response.data.error.message);
+      setStatusFilter('');
     }
   };
 
@@ -94,6 +97,27 @@ const Admin = () => {
       setLoadingLiteratures(false);
     }
   };
+
+  const getFilterBooks = async (status) => {
+    try {
+      setLoadingLiteratures(true);
+      const res = await API.get(`/literaturesFilter/${status}`);
+      // console.log('res: ', res);
+      setBooks(res.data.data);
+      setLoadingLiteratures(false);
+    } catch (err) {
+      console.log(err.response);
+      setLoadingLiteratures(false);
+    }
+  };
+
+  useEffect(() => {
+    if (statusFilter === 'all') {
+      getBooks();
+    } else if (statusFilter && statusFilter !== 'all') {
+      getFilterBooks(statusFilter);
+    }
+  }, [statusFilter]);
 
   useEffect(() => {
     getBooks();
@@ -113,6 +137,8 @@ const Admin = () => {
         addCustomClass={addCustomClass}
         addCustomIcon={addCustomIcon}
         loadingLiteratures={loadingLiteratures}
+        setStatusFilter={setStatusFilter}
+        statusFilter={statusFilter}
       />
       {modalOpen && (
         <AdminConfirm
