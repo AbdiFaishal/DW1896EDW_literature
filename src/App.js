@@ -14,6 +14,7 @@ import MyCollection from './pages/MyCollection/MyCollection';
 import AddLiterature from './pages/AddLiterature/AddLiterature';
 import Detail from './pages/Detail/Detail';
 import Admin from './pages/Admin/Admin';
+import NotFound from './pages/NotFound/NotFound';
 
 // if token available in localstorage then set default header for auth
 if (localStorage.token) setAuthToken(localStorage.token);
@@ -24,27 +25,30 @@ const AppRoutes = () => {
       <Route exact path="/">
         <Landing />
       </Route>
-      <PrivateRoute path="/home">
+      <PrivateRoute exact path="/home">
         <Home />
       </PrivateRoute>
-      <PrivateRoute path="/search">
+      <PrivateRoute exact path="/search">
         <Search />
       </PrivateRoute>
-      <PrivateRoute path="/profile">
+      <PrivateRoute exact path="/profile">
         <Profile />
       </PrivateRoute>
-      <PrivateRoute path="/my-collection">
+      <PrivateRoute exact path="/my-collection">
         <MyCollection />
       </PrivateRoute>
-      <PrivateRoute path="/add-literature">
+      <PrivateRoute exact path="/add-literature">
         <AddLiterature />
       </PrivateRoute>
-      <PrivateRoute path="/detail/:id">
+      <PrivateRoute exact path="/detail/:id">
         <Detail />
       </PrivateRoute>
-      <PrivateRouteAdmin path="/admin">
+      <PrivateRouteAdmin exact path="/admin">
         <Admin />
       </PrivateRouteAdmin>
+      <Route path="*">
+        <NotFound />
+      </Route>
     </Switch>
   );
 };

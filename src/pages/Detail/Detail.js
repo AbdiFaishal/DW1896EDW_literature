@@ -86,8 +86,8 @@ const Detail = () => {
       ) : errorMessage ? (
         <div className="error-message book-not-exist">
           <div>
-            <h1>{`Error 404: ${errorMessage}.`}</h1>
-            <p>Try another literature's id</p>
+            <h1>Error 404</h1>
+            <p>{`${errorMessage}. Try another literature's id!`}</p>
           </div>
         </div>
       ) : (
