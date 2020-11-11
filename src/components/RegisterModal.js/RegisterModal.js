@@ -63,7 +63,7 @@ const RegisterModal = ({ setRegisterOpen, setLoginOpen }) => {
       }
     } catch (err) {
       setMessage(err.response.data.error.message);
-      setLoading(true);
+      setLoading(false);
 
       dispatch({
         type: 'REGISTER_FAIL',
