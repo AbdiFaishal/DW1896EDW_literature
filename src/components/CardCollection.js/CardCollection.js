@@ -54,27 +54,3 @@ const CardCollection = (props) => {
 };
 
 export default CardCollection;
-
-// <button
-//   onClick={() => deleteCollection(params.id)}
-//   className="btn btn-collection"
-//   disabled={loading}
-// >
-//   {loading ? 'Loading' : 'Delete Collection'}
-// </button>;
-
-// const deleteCollection = async (literatureId) => {
-//   try {
-//     setLoading(true);
-//     setMessage('');
-//     const res = await API.delete(`delete-collection/${literatureId}`);
-
-//     setIsBookmark(false);
-//     setMessage(res.data.message);
-//     setLoading(false);
-//     setPopupOpen(true);
-//   } catch (err) {
-//     setLoading(false);
-//     console.log(err.response);
-//   }
-// };
